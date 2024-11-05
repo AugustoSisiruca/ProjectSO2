@@ -4,6 +4,7 @@
  */
 package Funciones;
 import java.util.Random;
+import proyecto2.Personaje;
 
 /**
  *
@@ -13,7 +14,7 @@ import java.util.Random;
 public class LinkedList {
 
     // Atributos de la clase
-    private Nodo pFirst;
+    private Node pFirst;
     private int iSize;
 
 
@@ -24,7 +25,7 @@ public class LinkedList {
 
 
     public void destroy() {
-        Nodo pAux = getpFirst();
+        Node pAux = getpFirst();
         while (pAux != null) {
             pAux = getpFirst();
             setpFirst(next(pAux));
@@ -35,9 +36,9 @@ public class LinkedList {
     }
 
 
-    public Nodo next(Nodo pNode) {
+    public Node next(Node pNode) {
         if (pNode != null) {
-            return (Nodo) pNode.getNext();
+            return (Node) pNode.getNext();
         } else {
             return null;
         }
@@ -54,24 +55,24 @@ public class LinkedList {
     }
 
 
-    public Nodo first() {
+    public Node first() {
         return getpFirst();
     }
 
 
     public void deleteFirst() {
         if (!isEmpty()) {
-            Nodo pAux = getpFirst();
+            Node pAux = getpFirst();
             setpFirst(next(pAux));
             pAux = null;
             setiSize(getiSize() - 1);
         }
     }
 
-    public Nodo deleteAndReturn(int index) {
+    public Node deleteAndReturn(int index) {
         if (!isEmpty()) {
             if (index >= 0 && index < getiSize()) {
-                Nodo pAux = getpFirst();
+                Node pAux = getpFirst();
                 if (index == 0) {
                     setpFirst(next(pAux));
                     setiSize(getiSize() - 1);
@@ -92,27 +93,27 @@ public class LinkedList {
 
 
 
-    public Nodo getRandomNode() {
+    public Node getRandomNode() {
         if (isEmpty()) {
             return null;
         }
 
         int index = new Random().nextInt(iSize);
-        Nodo current = pFirst;
+        Node current = pFirst;
 
         for (int i = 0; i < index; i++) {
-            current = (Nodo) current.getNext();
+            current = (Node) current.getNext();
         }
 
         return current;
     }
 
-    public Nodo getpFirst() {
+    public Node getpFirst() {
         return pFirst;
     }
 
 
-    public void setpFirst(Nodo pFirst) {
+    public void setpFirst(Node pFirst) {
         this.pFirst = pFirst;
     }
 
@@ -133,11 +134,11 @@ public class LinkedList {
         }
 
         StringBuilder builder = new StringBuilder();
-        Nodo current = pFirst;
+        Node current = pFirst;
         while (current != null) {
             builder.append(current.toString());
             builder.append(" -> ");
-            current = (Nodo) current.getNext();
+            current = (Node) current.getNext();
         }
         return builder.toString();
     }

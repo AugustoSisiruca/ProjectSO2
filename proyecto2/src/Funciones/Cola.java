@@ -4,119 +4,187 @@
  * and open the template in the editor.
  */
 package Funciones;
+import proyecto2.Personaje;
 
 /**
  *
  * @author sisir
  */
 public class Cola {
-    private Nodo head;
-    private Nodo tail;
-    private int size;
 
+    private int length;
+    /**
+     * Primer elemento de la cola, primero en salir.
+     */
+    private Node front;
+    /**
+     * Ultimo elemento de la cola, ultimo en salir
+     */
+    private Node back;
+
+    /**
+     * Constructor de la clase.
+     */
     public Cola() {
-        this.head = null;
-        this.tail = null;
-        this.size = 0;
+        this.length = 0;
+        this.front = this.back = null;
     }
 
-    public Nodo getHead() {
-        return head;
+    /**
+     * Getter para acceder a length.
+     *
+     * @return length el tamaño de la cola.
+     */
+    public int getLength() {
+        return length;
     }
 
-    public void setHead(Nodo head) {
-        this.head = head;
+    /**
+     * Setter para modificarl a length.
+     *
+     * @param newLength nuevo tamaño de la cola.
+     */
+    public void setLegth(int newLength) {
+        this.length = newLength;
     }
 
-    public Nodo getTail() {
-        return tail;
+    /**
+     * Getter para acceder al primer nodo en cola.
+     *
+     * @return front primer nodo en la cola.
+     */
+    public Node getFront() {
+        return front;
     }
 
-    public void setTail(Nodo tail) {
-        this.tail = tail;
+    /**
+     * Setter para modificar el primer nodo en cola.
+     *
+     * @param newFront el nuevo nodo que estara al inicio de la cola.
+     */
+    public void setFrond(Node newFront) {
+        this.front = newFront;
     }
 
-    public int getSize() {
-        return size;
+    /**
+     * Getter para acceder al ultimo nodo en cola.
+     *
+     * @return back el ultimo nodo en cola.
+     */
+    public Node getback() {
+        return back;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    /**
+     * Setter para modificar el ultimo nodo en cola.
+     *
+     * @param newback nuevo nodo que sera el ultimo de la cola.
+     */
+    public void setback(Node newback) {
+        this.back = newback;
     }
-    
-    public boolean isEmpty(){
-        return getHead() == null && getTail() == null;
+
+    /**
+     * Retorna el nodo que le precede.
+     *
+     * @param nodo nodo dado
+     * @return nextNodo
+     */
+    public Node next(Node nodo) {
+        return nodo.getNextNode();
     }
-    
-    public void printCola() {
-        Nodo pointer = getHead();
-        while(pointer != null){
-            System.out.print("["+pointer.getElement()+"]");
-            pointer = (Nodo) pointer.getNext();    
-        }
-        System.out.println("\nTamano de la cola: "+ size);
+
+    /**
+     * Verifica si no hay elementos en cola.
+     *
+     * @return boolean true si no hay nodos en cola false si hay al menos un
+     * nodo en la cola.
+     */
+    public boolean isEmpty() {
+        return front == null;
     }
-    
-    public void encolar(int element){
-        Nodo node = new Nodo(element);
-        if (isEmpty()){
-            setHead(node);
-            setTail(node);
-        } 
-        else{
-            Nodo pointer = getTail();
-            pointer.setNext(node);
-            setTail(node);
+
+    /**
+     * Inserta un nodo con la informacion dada despues del ultimo nodo en cola,
+     * y desplaza el back nodo al siguiente nodo.
+     *
+     * @param tInfo informacion a almacenar
+     */
+    public void enqueue(Personaje tInfo) {
+        Node newNodo = new Node(tInfo);
+        if (isEmpty()) {
+            front = newNodo;
+        } else {
+            back.setNextNode(newNodo);
         }
-        size++;
+        back = newNodo;
+        length++;
     }
-    
-    public void desencolar(){
-        if (isEmpty()){
-            System.out.println("Cola is Empty");
-        }
-        
-        else{
-            Nodo pointer = getHead();
-            setHead((Nodo) pointer.getNext());
-            pointer.setNext(null);
-            if (getHead() == null ){
-                setTail(null);
-            }
-        size --;
-        }
-    }
-    public Nodo dispach(){
-        if (isEmpty()){
-            System.out.println("Cola is Empty");
-        }
-        else{
-            Nodo pointer = getHead();
-            setHead((Nodo) pointer.getNext());
-            pointer.setNext(null);
-            if (getHead() == null){
-                setTail(null);
-            }
-            size--;
-            return pointer;
-        }
-    return null;}
-    
-    public void invertirCola() {
+
+    /**
+     * Saca el primer nodo en cola.
+     *
+     * @return aux el elemento que guarda el primer nodo en cola.
+     */
+    public Personaje dequeue() {
+        Personaje aux = null;
         if (!isEmpty()) {
-            Nodo newPointer = null;
-            Nodo pointer = getHead();
-
-            while (pointer != null) {
-                Nodo pointerNext = (Nodo) pointer.getNext();
-                pointer.setNext(newPointer);
-                newPointer = pointer;
-                pointer = pointerNext;
-            }
-            setTail(getHead());
-            setHead(newPointer);
+            aux = front.getTInfo();
+            this.front = next(front);
+            length--;
         }
+        return aux;
     }
-    
-    
+
+    /**
+     * Libera todos los nodo que estan en la cola.
+     */
+    public void destroyQueue() {
+        for (; front != null;) {
+            this.front = next(front);
+        }
+        System.gc();
+    }
+
+    @Override
+    public String toString() {
+        if (isEmpty()) {
+            return "La cola está vacía.";
+        }
+
+        StringBuilder builder = new StringBuilder();
+        Node current = front;
+        while (current != null) {
+            builder.append(current.toString());
+            if (current.getNextNode() != null) {
+                builder.append(" -> ");
+            }
+            current = current.getNextNode();
+        }
+
+        return builder.toString();
+    }
+
+    public Cola cloneQueue() {
+        Cola newQueue = new Cola();
+
+        Node node = this.getFront();
+        for (int i = 0; i < this.getLength(); i++) {
+            Personaje character = node.getTInfo();
+
+            Personaje newCharacter = new Personaje(
+                    character.getCharacterId(),
+                    character.getNameCharacter(),
+                    character.getHitPoints(),
+                    character.getSpeedVelocity(),
+                    character.getAgility(),
+                    character.getHability(),
+                    character.getUrlSource());
+
+            newQueue.enqueue(newCharacter);
+            node = node.getNextNode();
+        }
+        return newQueue;
+    }
+
 }
