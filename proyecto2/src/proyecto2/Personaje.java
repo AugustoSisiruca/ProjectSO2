@@ -8,6 +8,7 @@ package proyecto2;  // Define el paquete "proyecto2" al que pertenece esta clase
  *
  * @author sisir
  */
+
 public class Personaje {  // Declaración de la clase "Personaje".
 
     // Declaración de variables privadas de instancia.
