@@ -4,8 +4,8 @@
  */
 package Interfaz;
 
-//import Helpers.AudioManager;
-//import Helpers.ImageUtils;
+import Funciones.AudioManager;
+import Funciones.ImageUtils;
 import proyecto2.App;
 import javax.swing.ImageIcon;
 import javax.swing.JSlider;
@@ -32,13 +32,13 @@ public class Home extends javax.swing.JFrame {
         //this.audioManager = new AudioManager(); 
         audioManager.playMusic("/GUI/Assets/backgroundSound.wav");
         
-        ImageIcon cartoonNetworkLogo = imageUtils.loadScaledImage("/GUI/Assets/RegularShow/logo.png", 140, 80);
-        ImageIcon nickelodeonLogo = imageUtils.loadScaledImage("/GUI/Assets/Avatar/logo.png", 120, 80);
+        ImageIcon starWarsLogo = imageUtils.loadScaledImage("/GUI/Assets/RegularShow/logo.png", 140, 80);
+        ImageIcon starTrekLogo = imageUtils.loadScaledImage("/GUI/Assets/Avatar/logo.png", 120, 80);
         
-        //tvPanelUI1.getLogo().setIcon(starWarsLogo);
-        //tvPanelUI2.getLogo().setIcon(starTrikLogo);
-        //tvPanelUI1.getLogo().setText("");
-        //tvPanelUI2.getLogo().setText("");
+        tvPanelUI1.getLogo().setIcon(starWarsLogo);
+        tvPanelUI2.getLogo().setIcon(starTrekLogo);
+        tvPanelUI1.getLogo().setText("");
+        tvPanelUI2.getLogo().setText("");
         iaStatusLabel.setText("");
         WinnerLabelID.setText("");
 
@@ -79,36 +79,37 @@ public class Home extends javax.swing.JFrame {
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(240, 233, 223));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setMinimumSize(new java.awt.Dimension(1130, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        FightingTitle.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
+        FightingTitle.setFont(new java.awt.Font("Castellar", 1, 36)); // NOI18N
         FightingTitle.setForeground(new java.awt.Color(255, 255, 255));
         FightingTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        FightingTitle.setText("FIGHTING AREA");
-        jPanel1.add(FightingTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 10, 390, -1));
+        FightingTitle.setText("STAR WARS VS STAR TREK");
+        jPanel1.add(FightingTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 10, 700, -1));
 
-        Winner1.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        Winner1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         Winner1.setForeground(new java.awt.Color(255, 255, 255));
         Winner1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Winner1.setText("Ganador:");
         jPanel1.add(Winner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 630, 370, -1));
 
-        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel2.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
-        roundLabel.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        roundLabel.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         roundLabel.setForeground(new java.awt.Color(255, 255, 255));
         roundLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         roundLabel.setText("Round: 0");
 
-        iaStatusLabel.setFont(new java.awt.Font("Montserrat", 1, 17)); // NOI18N
+        iaStatusLabel.setFont(new java.awt.Font("Castellar", 1, 17)); // NOI18N
         iaStatusLabel.setForeground(new java.awt.Color(255, 255, 255));
         iaStatusLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         iaStatusLabel.setText("IA STATUS LABEL");
         iaStatusLabel.setToolTipText("");
 
+        battleDuration.setBackground(new java.awt.Color(0, 0, 51));
         battleDuration.setForeground(new java.awt.Color(255, 255, 255));
         battleDuration.setMajorTickSpacing(9);
         battleDuration.setMaximum(20);
@@ -130,12 +131,12 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        clockVelocity.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        clockVelocity.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
         clockVelocity.setForeground(new java.awt.Color(255, 255, 255));
         clockVelocity.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         clockVelocity.setText("AJUSTE LA VELOCIDAD ");
 
-        WinnerLabelID.setFont(new java.awt.Font("Montserrat", 0, 14)); // NOI18N
+        WinnerLabelID.setFont(new java.awt.Font("Century", 0, 14)); // NOI18N
         WinnerLabelID.setForeground(new java.awt.Color(255, 255, 255));
         WinnerLabelID.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         WinnerLabelID.setText("Ganador");
@@ -175,7 +176,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(iaStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(roundLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 461, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 464, Short.MAX_VALUE)
                 .addComponent(WinnerLabelID)
                 .addGap(53, 53, 53))
         );
@@ -257,28 +258,28 @@ public class Home extends javax.swing.JFrame {
     /**
      * @return the tvPanelUI1
      */
-    public GUIClasses.TvPanelUI getTvPanelUI1() {
+    public Interfaz.TvPanelUI getTvPanelUI1() {
         return tvPanelUI1;
     }
 
     /**
      * @return the tvPanelUI2
      */
-    public GUIClasses.TvPanelUI getTvPanelUI2() {
+    public Interfaz.TvPanelUI getTvPanelUI2() {
         return tvPanelUI2;
     }
 
     /**
      * @return the avatarFighter
      */
-    public GUIClasses.FighterUI getAvatarFighter() {
-        return avatarFighter;
+    public Interfaz.FighterUI getAvatarFighter() {
+        return starWarsFighter;
     }
 
     /**
      * @return the regularShowFighter
      */
-    public GUIClasses.FighterUI getRegularShowFighter() {
+    public Interfaz.FighterUI getRegularShowFighter() {
         return regularShowFighter;
     }
 

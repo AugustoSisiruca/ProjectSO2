@@ -4,6 +4,8 @@
  */
 package proyecto2;
 import Funciones.ControlMainUI;
+import Funciones.ImageUtils;
+import Funciones.AudioManager;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,13 +15,14 @@ import javax.swing.ImageIcon;
  *
  * @author sisir
  */
+
 public class IA extends Thread {
 
-    private Administrador administrator;
-    private Personaje characterStarWars;
-    private Personaje characterStarTrik;
-    private int winStarWars = 0;
-    private int winStartTrik = 0;
+    private Administrator administrator;
+    private Personaje starWarsFighter;
+    private Personaje starTrekFighter;
+    private int victoriesRegularShow = 0;
+    private int victoriesAvatar = 0;
 
     private final Semaphore mutex;
 
@@ -43,7 +46,7 @@ public class IA extends Thread {
 
                 ControlMainUI.getHome().getWinnerLabelID().setText("");
                 ControlMainUI.getHome().getIaStatusLabel().setText("Determinando el resultado del combate...");
-                updateCardsUI(getRegularShowFighter(), getAvatarFighter());
+                updateCardsUI(getStarWarsFighter(), getStarTrekFighter());
 
                 ControlMainUI.getHome().getRoundLabel().setText("Round: " + String.valueOf(round));
 
@@ -54,7 +57,7 @@ public class IA extends Thread {
 
                 if (aux <= 0.4) {
                     ControlMainUI.getHome().getIaStatusLabel().setText("¡Hay un ganador!");
-                    CharacterTv winner = getWinnerCharacter(this.characterStarWars, this.characterStarTrik);
+                    Personaje winner = getWinnerCharacter(this.starWarsFighter, this.starTrekFighter);
                     ControlMainUI.getHome().getWinnerLabelID().setText(winner.getCharacterId());
                     audioManager.playSoundEffect("/GUI/Assets/victory.wav", 2.0f);
                     Thread.sleep((long) ((getTime() * 1000 * 0.3) * 0.6));
@@ -65,15 +68,15 @@ public class IA extends Thread {
                     Thread.sleep((long) ((getTime() * 1000 * 0.3) * 0.6));
                     
 
-                    this.getAdministrator().getRegularShow().getQueue1().enqueue(this.characterStarWars);
-                    this.getAdministrator().getAvatar().getQueue1().enqueue(this.characterStarTrik);
+                    this.getAdministrator().getRegularShow().getQueue1().enqueue(this.starWarsFighter);
+                    this.getAdministrator().getAvatar().getQueue1().enqueue(this.starTrekFighter);
                 } else {
                     ControlMainUI.getHome().getIaStatusLabel().setText("El combate no se llevará a cabo.");
                     audioManager.playSoundEffect("/GUI/Assets/fail.wav", 2.0f);
                     Thread.sleep((long) ((getTime() * 1000 * 0.3) * 0.6));
 
-                    this.getAdministrator().getRegularShow().getQueue4().enqueue(this.characterStarWars);
-                    this.getAdministrator().getAvatar().getQueue4().enqueue(this.characterStarTrik);
+                    this.getAdministrator().getRegularShow().getQueue4().enqueue(this.starWarsFighter);
+                    this.getAdministrator().getAvatar().getQueue4().enqueue(this.starTrekFighter);
                 }
 
                 clearFightersUI();
@@ -95,7 +98,7 @@ public class IA extends Thread {
         ControlMainUI.getHome().getAvatarFighter().clearFightersLabels();
     }
 
-    private CharacterTv getWinnerCharacter(CharacterTv regularShowFighter, CharacterTv avatarFighter) {
+    private Personaje getWinnerCharacter(Personaje regularShowFighter, Personaje avatarFighter) {
         long startTime = System.currentTimeMillis();
         long endTime = startTime + getTime() * 1000; // Convierte tiempo de combate a milisegundos
         boolean combatEnd = false;
@@ -141,12 +144,12 @@ public class IA extends Thread {
         if (!combatEnd) {
         // Aquí se decide el ganador basado en quién tiene más HP.
             if (regularShowFighter.getHitPoints() > avatarFighter.getHitPoints()) {
-                this.winStarWars++;
-                ControlMainUI.getHome().getTvPanelUI1().getVictoriesLabel().setText(String.valueOf(this.winStarWars));
+                this.victoriesRegularShow++;
+                ControlMainUI.getHome().getTvPanelUI1().getVictoriesLabel().setText(String.valueOf(this.victoriesRegularShow));
                 return regularShowFighter;
             } else if (regularShowFighter.getHitPoints() < avatarFighter.getHitPoints()) {
-                this.winStartTrik++;
-                ControlMainUI.getHome().getTvPanelUI2().getVictoriesLabel().setText(String.valueOf(this.winStartTrik));
+                this.victoriesAvatar++;
+                ControlMainUI.getHome().getTvPanelUI2().getVictoriesLabel().setText(String.valueOf(this.victoriesAvatar));
                 return avatarFighter;
             } else {
                 // En caso de empate por HP
@@ -156,12 +159,12 @@ public class IA extends Thread {
 
         // Determinar ganador basado en HP restante.
         if (regularShowFighter.getHitPoints() > 0) {
-            this.winStarWars++;
-            ControlMainUI.getHome().getTvPanelUI1().getVictoriesLabel().setText(String.valueOf(this.winStarWars));
+            this.victoriesRegularShow++;
+            ControlMainUI.getHome().getTvPanelUI1().getVictoriesLabel().setText(String.valueOf(this.victoriesRegularShow));
             return regularShowFighter;
         } else if (avatarFighter.getHitPoints() > 0) {
-            this.winStartTrik++;
-            ControlMainUI.getHome().getTvPanelUI2().getVictoriesLabel().setText(String.valueOf(this.winStartTrik));
+            this.victoriesAvatar++;
+            ControlMainUI.getHome().getTvPanelUI2().getVictoriesLabel().setText(String.valueOf(this.victoriesAvatar));
             return avatarFighter;
         } else {
             return null; // Manejo de empate
@@ -169,7 +172,7 @@ public class IA extends Thread {
     }
 
 
-    private int calculateDamage(CharacterTv attacker, CharacterTv defender) {
+    private int calculateDamage(Personaje attacker, Personaje defender) {
         // Daño base con la lógica que el ataque no puede ser completo porque sino lo matariamos de one.
          int baseDamage = (attacker.getSpeedVelocity() + (attacker.getAgility() / 2)) / 2;
 
@@ -203,7 +206,7 @@ public class IA extends Thread {
          return damage;
      }
 
-    private void updateCardsUI(CharacterTv regularShowCharacter, CharacterTv avatarCharacterTv) {
+    private void updateCardsUI(Personaje regularShowCharacter, Personaje avatarCharacterTv) {
         ImageUtils imageUtils = new ImageUtils();
 
         ImageIcon regularShowCardIA = imageUtils.loadScaledImage(
@@ -222,5 +225,62 @@ public class IA extends Thread {
         ControlMainUI.getHome().getAvatarFighter().getCharacterIDLabel().setText(avatarCharacterTv.getCharacterId());
         ControlMainUI.getHome().getAvatarFighter().getHPLabel().setText(String.valueOf(avatarCharacterTv.getHitPoints()));
     }
+
+    /**
+     * @return the starWarsFighter
+     */
+    public Personaje getStarWarsFighter() {
+        return starWarsFighter;
+    }
+
+    /**
+     * @param regularShowFighter the starWarsFighter to set
+     */
+    public void setStarWarsFighter(Personaje regularShowFighter) {
+        this.starWarsFighter = regularShowFighter;
+    }
+
+    /**
+     * @return the starTrekFighter
+     */
+    public Personaje getStarTrekFighter() {
+        return starTrekFighter;
+    }
+
+    /**
+     * @param avatarFighter the starTrekFighter to set
+     */
+    public void setStarTrekFighter(Personaje avatarFighter) {
+        this.starTrekFighter = avatarFighter;
+    }
+
+    /**
+     * @return the administrator
+     */
+    public Administrator getAdministrator() {
+        return administrator;
+    }
+
+    /**
+     * @param administrator the administrator to set
+     */
+    public void setAdministrator(Administrator administrator) {
+        this.administrator = administrator;
+    }
+
+    /**
+     * @return the time
+     */
+    public long getTime() {
+        return time;
+    }
+
+    /**
+     * @param time the time to set
+     */
+    public void setTime(long time) {
+        this.time = time;
+    }
+
 }
 

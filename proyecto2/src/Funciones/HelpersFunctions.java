@@ -4,7 +4,7 @@
  */
 package Funciones;
 
-import proyecto2.Administrador;
+import proyecto2.Administrator;
 import proyecto2.IA;
 import proyecto2.App;
 
@@ -24,14 +24,14 @@ public class HelpersFunctions {
 
         app.setIa(new IA());
 
-        Administrador admin = new Administrador(
+        Administrator admin = new Administrator(
                 app.getIa(),
                 app.getMutex(),
                 fileFunctions.getGreenStarWars(), fileFunctions.getYellowStarWars(), fileFunctions.getRedStarWars(),
                 fileFunctions.getGreenStarTrek(), fileFunctions.getYellowStarTrek(), fileFunctions.getRedStarTrek());
 
         app.setAdmin(admin);
-        app.getAdmin().getIa().setAdministrador(admin);
+        app.getAdmin().getIa().setAdministrator(admin);
         app.getAdmin().startSimulation();
 
     }

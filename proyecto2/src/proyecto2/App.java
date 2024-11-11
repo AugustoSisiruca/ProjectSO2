@@ -20,7 +20,7 @@ public class App {
 
     private static Semaphore mutex = new Semaphore(1);
     private static int battleDuration = 10;
-    private static Administrador admin;
+    private static Administrator admin;
     private static IA ia;
 
     private static App app;
@@ -78,11 +78,11 @@ public class App {
         App.battleDuration = battleDuration;
     }
 
-    public static Administrador getAdmin() {
+    public static Administrator getAdmin() {
         return admin;
     }
 
-    public static void setAdmin(Administrador admin) {
+    public static void setAdmin(Administrator admin) {
         App.admin = admin;
     }
 

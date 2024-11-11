@@ -16,7 +16,7 @@ import Funciones.LinkedList;
  *
  * @author sisir
  */
-public class Administrador extends Thread {
+public class Administrator extends Thread {
 
     private IA ia;
     private final Semaphore mutex;
@@ -24,15 +24,15 @@ public class Administrador extends Thread {
     private final Pelicula avatar;
     private int numRound = 0;
 
-    public Administrador(IA ia, Semaphore mutex, LinkedList yellowCards1, LinkedList greenCards1, LinkedList redCards1,
-            LinkedList yellowCards2, LinkedList greenCards2, LinkedList redCards2) {
+    public Administrator(IA ia, Semaphore mutex, LinkedList greenCards1, LinkedList yellowCards1, LinkedList redCards1,
+            LinkedList greenCards2, LinkedList yellowCards2, LinkedList redCards2) {
 
         this.ia = ia;
         this.mutex = mutex;
         this.regularShow = new Pelicula("StarWars", "/GUI/Assets/RegularShow",
-                yellowCards1, greenCards1, redCards1);
+                greenCards1, yellowCards1, redCards1);
         this.avatar = new Pelicula("StarTrek", "/GUI/Assets/Avatar",
-                yellowCards2, greenCards2, redCards2);
+                greenCards2, yellowCards2, redCards2);
     }
 
     public void startSimulation() {
@@ -60,7 +60,7 @@ public class Administrador extends Thread {
         try {
             mutex.acquire();
         } catch (InterruptedException ex) {
-            Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Administrator.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         this.start();
@@ -89,8 +89,8 @@ public class Administrador extends Thread {
                 //TODO: Pasarle los fighters a la IA
                 // Aca 0j0
                 //------------------
-                this.getIa().setRegularShowFighter(regularShowFighter);
-                this.getIa().setAvatarFighter(avatarFighter);
+                this.getIa().setStarWarsFighter(regularShowFighter);
+                this.getIa().setStarTrekFighter(avatarFighter);
 
                 updateUIqueue();
                 mutex.release();
@@ -105,7 +105,7 @@ public class Administrador extends Thread {
                 updateUIqueue();
 
             } catch (InterruptedException ex) {
-                Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Administrator.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 

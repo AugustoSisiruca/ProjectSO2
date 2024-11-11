@@ -19,9 +19,9 @@ public class ControlMainUI {
 
     public static void updateUIQueue(String tvShow, Cola queue1, Cola queue2, Cola queue3, Cola queue4) {
         if (tvShow.equalsIgnoreCase("regularshow")) {
-            //home.getTvPanelUI1().updateUIQueue(queue1, queue2, queue3, queue4);
+            home.getTvPanelUI1().updateUIQueue(queue1, queue2, queue3, queue4);
         } else {
-            //home.getTvPanelUI2().updateUIQueue(queue1, queue2, queue3, queue4);
+            home.getTvPanelUI2().updateUIQueue(queue1, queue2, queue3, queue4);
         }
     }
 
