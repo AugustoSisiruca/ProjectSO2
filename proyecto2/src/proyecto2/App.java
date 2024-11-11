@@ -8,6 +8,7 @@ import Interfaz.MenuInicio;
 import java.io.File;
 import java.util.concurrent.Semaphore;
 import Funciones.FileFunctions;
+import Funciones.HelpersFunctions;
 /**
  *
  * @author sisir
@@ -26,16 +27,21 @@ public class App {
     private static App app;
     
     
-    public void start(){
+    public void start2(){
     MenuInicio home = new MenuInicio();
         home.setVisible(true);
     }
+    
     
     public static synchronized App getInstance() {
         if (getApp() == null) {
             setApp(new App());
         }
         return getApp();
+    }
+
+    public void start() {
+        HelpersFunctions.loadParams();
     }
 
     public static String getSelectedPath() {

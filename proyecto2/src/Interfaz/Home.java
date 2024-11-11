@@ -43,10 +43,10 @@ public class Home extends javax.swing.JFrame {
         WinnerLabelID.setText("");
 
         // Se setean las imagenes que la lucha en la IA.
-//        ImageIcon regularShowCardIA=  imageUtils.loadScaledImage(app.getIaArena().getRegularShowFighter().getUrlSource(), 150, 200);
-//        this.RegularShowCard.setIcon(regularShowCardIA);
-//        ImageIcon avatarCardIA=  imageUtils.loadScaledImage(app.getIaArena().getAvatarFighter().getUrlSource(), 150, 200);
-//        this.AvatarCard.setIcon(avatarCardIA);
+        //ImageIcon regularShowCardIA=  imageUtils.loadScaledImage(app.getIaArena().getRegularShowFighter().getUrlSource(), 150, 200);
+        //this.StarWarsCard.setIcon(regularShowCardIA);
+        //ImageIcon avatarCardIA=  imageUtils.loadScaledImage(app.getIaArena().getAvatarFighter().getUrlSource(), 150, 200);
+        //this.StarTrek.setIcon(avatarCardIA);
         // Se configura el slider 
         battleDuration.setOpaque(false);
         battleDuration.setMinimum(1);
@@ -66,13 +66,17 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         FightingTitle = new javax.swing.JLabel();
-        Winner1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         roundLabel = new javax.swing.JLabel();
         iaStatusLabel = new javax.swing.JLabel();
         battleDuration = new javax.swing.JSlider();
         clockVelocity = new javax.swing.JLabel();
         WinnerLabelID = new javax.swing.JLabel();
+        Winner1 = new javax.swing.JLabel();
+        fighterUI1 = new Interfaz.FighterUI();
+        fighterUI2 = new Interfaz.FighterUI();
+        tvPanelUI1 = new Interfaz.TvPanelUI();
+        tvPanelUI2 = new Interfaz.TvPanelUI();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -88,12 +92,6 @@ public class Home extends javax.swing.JFrame {
         FightingTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FightingTitle.setText("STAR WARS VS STAR TREK");
         jPanel1.add(FightingTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 10, 700, -1));
-
-        Winner1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
-        Winner1.setForeground(new java.awt.Color(255, 255, 255));
-        Winner1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Winner1.setText("Ganador:");
-        jPanel1.add(Winner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 630, 370, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 51));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -141,29 +139,41 @@ public class Home extends javax.swing.JFrame {
         WinnerLabelID.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         WinnerLabelID.setText("Ganador");
 
+        Winner1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        Winner1.setForeground(new java.awt.Color(255, 255, 255));
+        Winner1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Winner1.setText("Ganador:");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(iaStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(WinnerLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Winner1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGap(39, 39, 39)
+                                    .addComponent(roundLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGap(15, 15, 15)
+                                    .addComponent(clockVelocity, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(fighterUI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(fighterUI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(151, 151, 151)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(battleDuration, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(iaStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(clockVelocity, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addComponent(roundLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(WinnerLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,22 +186,36 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(iaStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(roundLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 464, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(fighterUI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fighterUI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Winner1)
+                .addGap(68, 68, 68)
                 .addComponent(WinnerLabelID)
                 .addGap(53, 53, 53))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 400, 730));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 400, 730));
+        jPanel1.add(tvPanelUI1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 60, 370, 740));
+        jPanel1.add(tvPanelUI2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 370, 740));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -249,10 +273,14 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel WinnerLabelID;
     private javax.swing.JSlider battleDuration;
     private javax.swing.JLabel clockVelocity;
+    private Interfaz.FighterUI fighterUI1;
+    private Interfaz.FighterUI fighterUI2;
     private javax.swing.JLabel iaStatusLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel roundLabel;
+    private Interfaz.TvPanelUI tvPanelUI1;
+    private Interfaz.TvPanelUI tvPanelUI2;
     // End of variables declaration//GEN-END:variables
 
     /**
@@ -273,14 +301,14 @@ public class Home extends javax.swing.JFrame {
      * @return the avatarFighter
      */
     public Interfaz.FighterUI getAvatarFighter() {
-        return starWarsFighter;
+        return fighterUI1;
     }
 
     /**
      * @return the regularShowFighter
      */
     public Interfaz.FighterUI getRegularShowFighter() {
-        return regularShowFighter;
+        return fighterUI2;
     }
 
     /**
