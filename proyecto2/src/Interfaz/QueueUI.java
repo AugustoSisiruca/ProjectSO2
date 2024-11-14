@@ -5,7 +5,7 @@
 package Interfaz;
 
 import Funciones.Cola;
-import Funciones.ImageUtils;
+import Funciones.ImageMovie;
 import proyecto2.Personaje;
 import java.awt.FlowLayout;
 import javax.swing.ImageIcon;
@@ -23,7 +23,7 @@ public class QueueUI extends javax.swing.JPanel {
      * Creates new form QueueUI
      */
     private JPanel queuePanel; // Panel para agregar los JLabel
-    private final ImageUtils imageUtils = new ImageUtils();
+    private final ImageMovie imageUtils = new ImageMovie();
 
     public QueueUI() {
         initComponents();

@@ -7,7 +7,7 @@ package Funciones;
 import Interfaz.Home;
 /**
  *
- * @author angel
+ * @author
  */
 public class ControlMainUI {
 

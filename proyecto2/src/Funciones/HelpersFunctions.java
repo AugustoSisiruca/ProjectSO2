@@ -4,18 +4,18 @@
  */
 package Funciones;
 
-import proyecto2.Administrator;
+import proyecto2.Administrador;
 import proyecto2.IA;
 import proyecto2.App;
 
 /**
  *
- * @author
+ * @author sisir
  */
 
 public class HelpersFunctions {
 
-    public final static String[] priority = {"Yellow", "Green", "Red"};
+    public final static String[] priority = {"Green", "Yellow", "Red"};
 
     public static void loadParams() {
         App app = App.getInstance();
@@ -24,7 +24,7 @@ public class HelpersFunctions {
 
         app.setIa(new IA());
 
-        Administrator admin = new Administrator(
+        Administrador admin = new Administrador(
                 app.getIa(),
                 app.getMutex(),
                 fileFunctions.getGreenStarWars(), fileFunctions.getYellowStarWars(), fileFunctions.getRedStarWars(),

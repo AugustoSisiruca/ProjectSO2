@@ -13,13 +13,13 @@ import proyecto2.Personaje;
 public class FileFunctions {
 
     // Definimos arrays para cada categoría
-    private LinkedList redStarWars = new LinkedList();
-    private LinkedList yellowStarWars = new LinkedList();
-    private LinkedList greenStarWars = new LinkedList();
+    private Lista redStarWars = new Lista();
+    private Lista yellowStarWars = new Lista();
+    private Lista greenStarWars = new Lista();
 
-    private LinkedList redStarTrek = new LinkedList();
-    private LinkedList yellowStarTrek = new LinkedList();
-    private LinkedList greenStarTrek = new LinkedList();
+    private Lista redStarTrek = new Lista();
+    private Lista yellowStarTrek = new Lista();
+    private Lista greenStarTrek = new Lista();
 
     public void read(File file) {
         String line;
@@ -74,51 +74,51 @@ public class FileFunctions {
         }
     }
 
-    public LinkedList getRedStarWars() {
+    public Lista getRedStarWars() {
         return redStarWars;
     }
 
-    public void setRedStarWars(LinkedList redStarWars) {
+    public void setRedStarWars(Lista redStarWars) {
         this.redStarWars = redStarWars;
     }
 
-    public LinkedList getYellowStarWars() {
+    public Lista getYellowStarWars() {
         return yellowStarWars;
     }
 
-    public void setYellowStarWars(LinkedList yellowStarWars) {
+    public void setYellowStarWars(Lista yellowStarWars) {
         this.yellowStarWars = yellowStarWars;
     }
 
-    public LinkedList getGreenStarWars() {
+    public Lista getGreenStarWars() {
         return greenStarWars;
     }
 
-    public void setGreenStarWars(LinkedList greenStarWars) {
+    public void setGreenStarWars(Lista greenStarWars) {
         this.greenStarWars = greenStarWars;
     }
 
-    public LinkedList getRedStarTrek() {
+    public Lista getRedStarTrek() {
         return redStarTrek;
     }
 
-    public void setRedStarTrek(LinkedList redStarTrek) {
+    public void setRedStarTrek(Lista redStarTrek) {
         this.redStarTrek = redStarTrek;
     }
 
-    public LinkedList getYellowStarTrek() {
+    public Lista getYellowStarTrek() {
         return yellowStarTrek;
     }
 
-    public void setYellowStarTrek(LinkedList yellowStarTrek) {
+    public void setYellowStarTrek(Lista yellowStarTrek) {
         this.yellowStarTrek = yellowStarTrek;
     }
 
-    public LinkedList getGreenStarTrek() {
+    public Lista getGreenStarTrek() {
         return greenStarTrek;
     }
 
-    public void setGreenStarTrek(LinkedList greenStarTrek) {
+    public void setGreenStarTrek(Lista greenStarTrek) {
         this.greenStarTrek = greenStarTrek;
     }
 
