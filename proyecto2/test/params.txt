@@ -1,14 +1,5 @@
 [Star Wars]
-Mordecai,120,90,110,Ataque Crítico,/GUI/Assets/StarWars/mordecai-yellow.png;
-Rigby,80,82,94,Curación,/GUI/Assets/StarWars/rigby-yellow.png;
-Benson,63,55,82,Parálisis,/GUI/Assets/StarWars/benson-yellow.png;
-Pops,85,55,65,Aumento de Agilidad,/GUI/Assets/StarWars/pops-yellow.png;
-Skips,100,92,70,Aumento de Velocidad,/GUI/Assets/StarWars/skips-yellow.png;
-Mitch,43,91,73,Ataque Crítico,/GUI/Assets/StarWars/mitch-yellow.png;
-Fantasmin,110,75,85,Curación,/GUI/Assets/StarWars/fantasmin-yellow.png;
-Thomas,95,62,83,Parálisis,/GUI/Assets/StarWars/thomas-yellow.png;
-Margarita,95,65,75,Aumento de Velocidad,/GUI/Assets/StarWars/margarita-yellow.png;
-Party Horse,100,80,75,Ataque Crítico,/GUI/Assets/StarWars/partyhorse-yellow.png;
+
 Eileen,81,10,90,Congelamiento,/GUI/Assets/StarWars/eilen-yellow.png;
 CJ,87,99,25,Parálisis,/GUI/Assets/StarWars/cj-yellow.png;
 Starla,105,60,80,Curación,/GUI/Assets/StarWars/starla-yellow.png;
@@ -29,16 +20,7 @@ Susan,85,45,65,Congelamiento,/GUI/Assets/StarWars/susan-yellow.png;
 Pam,105,55,60,Curación,/GUI/Assets/StarWars/pam-yellow.png;
 Archie,95,65,70,Ataque crítico,/GUI/Assets/StarWars/archie-yellow.png;
 John,95,65,65,Parálisis,/GUI/Assets/StarWars/john-yellow.png;
-Mordecai,120,92,100,Ataque Crítico,/GUI/Assets/StarWars/mordecai-green.png;
-Rigby,83,82,74,Curación,/GUI/Assets/StarWars/rigby-green.png;
-Benson,73,85,45,Parálisis,/GUI/Assets/StarWars/benson-green.png;
-Pops,91,55,72,Aumento de Agilidad,/GUI/Assets/StarWars/pops-green.png;
-Skips,98,82,80,Aumento de Velocidad,/GUI/Assets/StarWars/skips-green.png;
-Mitch,43,72,80,Ataque Crítico,/GUI/Assets/StarWars/mitch-green.png;
-Fantasmin,110,85,62,Curación,/GUI/Assets/StarWars/fantasmin-green.png;
-Thomas,97,43,73,Parálisis,/GUI/Assets/StarWars/thomas-green.png;
-Margarita,95,65,75,Aumento de Velocidad,/GUI/Assets/StarWars/margarita-green.png;
-Party Horse,70,74,52,Ataque Crítico,/GUI/Assets/StarWars/partyhorse-green.png;
+
 Eileen,81,90,10,Congelamiento,/GUI/Assets/StarWars/eilen-green.png;
 CJ,87,99,25,Parálisis,/GUI/Assets/StarWars/cj-green.png;
 Starla,105,60,80,Curación,/GUI/Assets/StarWars/starla-green.png;
@@ -59,16 +41,7 @@ Susan,102,60,83,Curación,/GUI/Assets/StarWars/susan-green.png;
 Pam,98,81,48,Aumento de Agilidad,/GUI/Assets/StarWars/pam-green.png;
 Archie,97,87,73,Ataque Crítico,/GUI/Assets/StarWars/archie-green.png;
 John,92,95,99,Reducción de Daño,/GUI/Assets/StarWars/john-green.png;
-Mordecai,95,82,93,Aumento de Velocidad,/GUI/Assets/StarWars/mordecai-red.png;
-Rigby,120,77,83,Curación,/GUI/Assets/StarWars/rigby-red.png;
-Benson,93,85,45,Reducción de Daño,/GUI/Assets/StarWars/benson-red.png;
-Pops,102,55,76,Aumento de Agilidad,/GUI/Assets/StarWars/pops-red.png;
-Skips,103,82,80,Aumento de Velocidad,/GUI/Assets/StarWars/skips-red.png;
-Mitch,97,83,65,Duplicar Daño,/GUI/Assets/StarWars/mitch-red.png;
-Fantasmin,93,85,62,Inmunidad,/GUI/Assets/StarWars/fantasmin-red.png;
-Thomas,93,40,85,Parálisis,/GUI/Assets/StarWars/thomas-red.png;
-Margarita,94,83,90,Aumento de Velocidad,/GUI/Assets/StarWars/margarita-red.png;
-Party Horse,100,92,83,Energía,/GUI/Assets/StarWars/partyhorse-red.png;
+
 Eileen,90,60,80,Congelamiento,/GUI/Assets/StarWars/eilen-red.png;
 CJ,87,70,73,Barrera de Energía,/GUI/Assets/StarWars/cj-red.png;
 Starla,76,60,80,Veneno,/GUI/Assets/StarWars/starla-red.png;
@@ -91,16 +64,7 @@ Archie,87,82,55,Veneno,/GUI/Assets/StarWars/archie-red.png;
 John,65,72,99,Reducción de Daño,/GUI/Assets/StarWars/john-red.png;
 
 [Star Trek]
-Ang,120,100,100,Aumento de Velocidad,/GUI/Assets/StarTrek/ang-yellow.png;
-Katara,95,75,85,Curación,/GUI/Assets/StarTrek/katara-yellow.png;
-Sokka,90,70,80,Ataque Crítico,/GUI/Assets/StarTrek/sokka-yellow.png;
-Toph Beifong,110,60,90,Parálisis,/GUI/Assets/StarTrek/toph-yellow.png;
-Suko,100,75,85,Curación,/GUI/Assets/StarTrek/suko-yellow.png;
-Iroh,95,55,75,Congelamiento,/GUI/Assets/StarTrek/iroh-yellow.png;
-Azula,100,80,90,Aumento de Agilidad,/GUI/Assets/StarTrek/azula-yellow.png;
-Appa,100,40,50,Aumento de Velocidad,/GUI/Assets/StarTrek/appa-yellow.png;
-Momo,70,90,95,Aumento de Agilidad,/GUI/Assets/StarTrek/momo-yellow.png;
-Suki,95,70,85,Ataque Crítico,/GUI/Assets/StarTrek/suki-yellow.png;
+
 Yue,85,65,70,Curación,/GUI/Assets/StarTrek/yue-yellow.png;
 Ozai,110,65,80,Ataque Crítico,/GUI/Assets/StarTrek/ozai-yellow.png;
 Mai,90,75,85,Parálisis,/GUI/Assets/StarTrek/mai-yellow.png;
@@ -121,18 +85,9 @@ Pathik,85,55,70,Curación,/GUI/Assets/StarTrek/pathik-yellow.png;
 La Roca,110,60,90,Ataque Crítico,/GUI/Assets/StarTrek/laroca-yellow.png;
 On Ji,80,70,75,Congelamiento,/GUI/Assets/StarTrek/onji-yellow.png;
 Bumi,105,60,85,Congelamiento,/GUI/Assets/StarTrek/bumi-yellow.png;
+
 Ang,120,100,100,Aumento de Velocidad,/GUI/Assets/StarTrek/ang-green.png;
 Katara,90,75,85,Curación,/GUI/Assets/StarTrek/katara-green.png;
-Sokka,82,70,80,Ataque Crítico,/GUI/Assets/StarTrek/sokka-green.png;
-Toph Beifong,101,56,92,Parálisis,/GUI/Assets/StarTrek/toph-green.png;
-Suko,99,51,67,Curación,/GUI/Assets/StarTrek/suko-green.png;
-Iroh,87,67,88,Congelamiento,/GUI/Assets/StarTrek/iroh-green.png;
-Azula,89,74,90,Aumento de Agilidad,/GUI/Assets/StarTrek/azula-green.png;
-Appa,102,78,76,Aumento de Velocidad,/GUI/Assets/StarTrek/appa-green.png;
-Momo,75,83,76,Congelamiento,/GUI/Assets/StarTrek/momo-green.png;
-Suki,76,66,83,Ataque Crítico,/GUI/Assets/StarTrek/suki-green.png;
-Yue,99,45,70,Curación,/GUI/Assets/StarTrek/yue-green.png;
-Ozai,100,76,66,Ataque Crítico,/GUI/Assets/StarTrek/ozai-green.png;
 Mai,93,71,80,Parálisis,/GUI/Assets/StarTrek/mai-green.png;
 Ty Lee,98,74,95,Aumento de Velocidad,/GUI/Assets/StarTrek/tylee-green.png;
 Roku,103,60,75,Curación,/GUI/Assets/StarTrek/roku-green.png;
@@ -151,16 +106,8 @@ Pathik,95,53,70,Curación,/GUI/Assets/StarTrek/pathik-green.png;
 La Roca,100,60,90,Ataque Crítico,/GUI/Assets/StarTrek/laroca-green.png;
 On Ji,96,65,73,Congelamiento,/GUI/Assets/StarTrek/onji-green.png;
 Bumi,103,99,66,Curación,/GUI/Assets/StarTrek/bumi-green.png;
-Ang,120,100,100,Aumento de Velocidad,/GUI/Assets/StarTrek/ang-red.png;
-Katara,97,75,93,Curación,/GUI/Assets/StarTrek/katara-red.png;
-Sokka,76,70,84,Ataque Crítico,/GUI/Assets/StarTrek/sokka-red.png;
-Toph Beifong,87,78,92,Parálisis,/GUI/Assets/StarTrek/toph-red.png;
-Suko,84,51,79,Curación,/GUI/Assets/StarTrek/suko-red.png;
-Iroh,95,67,98,Congelamiento,/GUI/Assets/StarTrek/iroh-red.png;
-Azula,67,94,85,Aumento de Agilidad,/GUI/Assets/StarTrek/azula-red.png;
-Appa,87,78,93,Aumento de Velocidad,/GUI/Assets/StarTrek/appa-red.png;
-Momo,93,83,76,Congelamiento,/GUI/Assets/StarTrek/momo-red.png;
-Suki,88,66,79,Ataque Crítico,/GUI/Assets/StarTrek/suki-red.png;
+
+
 Yue,76,45,88,Curación,/GUI/Assets/StarTrek/yue-red.png;
 Ozai,110,76,66,Ataque Crítico,/GUI/Assets/StarTrek/ozai-red.png;
 Mai,93,71,89,Parálisis,/GUI/Assets/StarTrek/mai-red.png;
