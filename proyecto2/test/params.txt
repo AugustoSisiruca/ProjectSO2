@@ -1,5 +1,4 @@
 [Star Wars]
-
 Palpatine,81,90,10,Congelamiento,/GUI/Assets/StarWars/starWars0-green.png;
 Han Solo,87,99,25,Parálisis,/GUI/Assets/StarWars/starWars1-green.png;
 Yoda,105,60,80,Curación,/GUI/Assets/StarWars/starWars2-green.png;
@@ -62,7 +61,6 @@ Qui-Gon Jinn,87,82,55,Veneno,/GUI/Assets/StarWars/starWars18-red.png;
 Kit Fisto,65,72,99,Reducción de Daño,/GUI/Assets/StarWars/starWars19-red.png;
 
 [Star Trek]
-
 James T. Kirk,120,100,100,Aumento de Velocidad,/GUI/Assets/StarTrek/starTrek0-green.png;
 Spock,90,75,85,Curación,/GUI/Assets/StarTrek/starTrek1-green.png;
 Leonard McCoy,93,71,80,Parálisis,/GUI/Assets/StarTrek/starTrek2-green.png;
@@ -123,4 +121,3 @@ Jadzia Dax,75,53,70,Curación,/GUI/Assets/StarTrek/starTrek16-red.png;
 Odo,76,60,75,Ataque Crítico,/GUI/Assets/StarTrek/starTrek17-red.png;
 **Quark,89,65,70,Congelamiento,/GUI/Assets/StarTrek/starTrek18-red.png;
 Geordi La F.,87,99,66,Curación,/GUI/Assets/StarTrek/starTrek19-red.png;
-

@@ -38,8 +38,9 @@ public class Pelicula {
     }
 
     private void createAndEnqueueCharacter(Nodo characterNode) {
+        System.out.println(characterNode.getTInfo());
         characterNode.setIdNode(characterNode.getIdNode() + 1);
-
+        
         Personaje character = characterNode.getTInfo();
 
         int priorityLevel = character.getPriorityLevel();
@@ -97,7 +98,7 @@ public class Pelicula {
         } else {
             node = redCards.getRandomNode();
         }
-
+        System.out.println(node +"9");
         createAndEnqueueCharacter(node);
     }
 

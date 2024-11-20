@@ -62,7 +62,7 @@ public class FileFunctions {
                         } else if (line.contains("yellow.png") && "Star Trek".equals(currentShow)) {
                             personaje.setPriorityLevel(2);
                             this.getYellowStarTrek().addEnd(personaje);
-                        } else if (line.contains("red.png") && "Strar Trek".equals(currentShow)) {
+                        } else if (line.contains("red.png") && "Star Trek".equals(currentShow)) {
                             personaje.setPriorityLevel(3);
                             this.getRedStarTrek().addEnd(personaje);
                         }

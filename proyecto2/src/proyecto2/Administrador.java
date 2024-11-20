@@ -28,18 +28,18 @@ public class Administrador extends Thread {
 
         this.ia = ia;
         this.mutex = mutex;
-        this.starwars = new Pelicula("RegularShow", "/GUI/Assets/RegularShow",
-                greenCards1, yellowCards1, redCards1);
-        this.starTrek = new Pelicula("Avatar", "/GUI/Assets/Avatar",
-                greenCards2, yellowCards2, redCards2);
+        this.starwars = new Pelicula("Star Wars", "/GUI/Assets/StarWars", greenCards1, yellowCards1, redCards1);
+        this.starTrek = new Pelicula("Star Trek", "/GUI/Assets/StarTrek", greenCards2, yellowCards2, redCards2);
     }
 
     public void startSimulation() {
 //        ControlMainUI.getHome().setVisible(true);
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 17; i++) {
             getStarWars().createCharacter();
+            System.out.println("Llego1");
             getStarTrek().createCharacter();
+            System.out.println("Llego2");
         }
 
         ControlMainUI.getHome().getTvPanelUI1().updateUIQueue(getStarWars().getQueue1(),
