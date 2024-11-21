@@ -35,7 +35,7 @@ public class Administrador extends Thread {
     public void startSimulation() {
 //        ControlMainUI.getHome().setVisible(true);
 
-        for (int i = 0; i < 17; i++) {
+        for (int i = 0; i < 20; i++) {
             getStarWars().createCharacter();
             System.out.println("Llego1");
             getStarTrek().createCharacter();
