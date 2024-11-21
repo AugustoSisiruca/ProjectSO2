@@ -18,17 +18,17 @@ public class TvPanelUI extends javax.swing.JPanel {
      */
     public TvPanelUI() {
         initComponents();
-        this.getQueueUI1().getTitleQueueUI().setText("COLA DE PRIORIDAD: 1");
-        this.getQueueUI2().getTitleQueueUI().setText("COLA DE PRIORIDAD: 2");
-        this.getQueueUI3().getTitleQueueUI().setText("COLA DE PRIORIDAD: 3");
-        this.getQueueUI4().getTitleQueueUI().setText("COLA DE REFUERZOS");
+        this.getQueueUI1().getTitleQueueUI().setText("COLA ALTA PRIORIDAD");
+        this.getQueueUI2().getTitleQueueUI().setText("COLA MEDIA PRIORIDAD");
+        this.getQueueUI3().getTitleQueueUI().setText("COLA BAJA PRIORIDAD");
+        this.getQueueUI4().getTitleQueueUI().setText("COLA DE REFUERZO");
     }
 
     public void updateUIQueue(Cola queue1, Cola queue2, Cola queue3, Cola queue4) {
-        this.queueUI1.updateQueueUI(queue1);
-        this.queueUI1.updateQueueUI(queue2);
-        this.queueUI3.updateQueueUI(queue3);
-        this.queueUI4.updateQueueUI(queue4);
+        this.Cola1.updateQueueUI(queue1);
+        this.Cola2.updateQueueUI(queue2);
+        this.Cola3.updateQueueUI(queue3);
+        this.ColaRefuerzo.updateQueueUI(queue4);
     }
 
     /**
@@ -42,60 +42,65 @@ public class TvPanelUI extends javax.swing.JPanel {
 
         cartoonNetworkLogo = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        Cola1 = new Interfaz.QueueUI();
+        Cola2 = new Interfaz.QueueUI();
+        Cola3 = new Interfaz.QueueUI();
+        ColaRefuerzo = new Interfaz.QueueUI();
         logo = new javax.swing.JLabel();
         victoriesLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        queueUI1 = new Interfaz.QueueUI();
-        queueUI2 = new Interfaz.QueueUI();
-        queueUI3 = new Interfaz.QueueUI();
-        queueUI4 = new Interfaz.QueueUI();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         cartoonNetworkLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cartoonNetworkLogo.setText("cartoonNetworkLogo");
 
+        setName(""); // NOI18N
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(370, 710));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(Cola1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, -1, -1));
+        jPanel1.add(Cola2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+        jPanel1.add(Cola3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+        jPanel1.add(ColaRefuerzo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
-        logo.setBackground(new java.awt.Color(255, 255, 255));
-        logo.setForeground(new java.awt.Color(255, 255, 255));
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         logo.setText("TVLogo");
         jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 100));
 
         victoriesLabel.setBackground(new java.awt.Color(255, 255, 255));
-        victoriesLabel.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
+        victoriesLabel.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         victoriesLabel.setForeground(new java.awt.Color(255, 255, 255));
         victoriesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         victoriesLabel.setText("0");
-        jPanel1.add(victoriesLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 150, -1));
+        jPanel1.add(victoriesLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 50, 40));
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("VICTORIAS");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 150, -1));
-        jPanel1.add(queueUI1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 580, -1, -1));
-        jPanel1.add(queueUI2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
-        jPanel1.add(queueUI3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
-        jPanel1.add(queueUI4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Broadway", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("VICTORY");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 140, 50));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondoBatalla.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 0, 380, 740));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 740));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private Interfaz.QueueUI Cola1;
+    private Interfaz.QueueUI Cola2;
+    private Interfaz.QueueUI Cola3;
+    private Interfaz.QueueUI ColaRefuerzo;
     private javax.swing.JLabel cartoonNetworkLogo;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel logo;
-    private Interfaz.QueueUI queueUI1;
-    private Interfaz.QueueUI queueUI2;
-    private Interfaz.QueueUI queueUI3;
-    private Interfaz.QueueUI queueUI4;
     private javax.swing.JLabel victoriesLabel;
     // End of variables declaration//GEN-END:variables
 
@@ -104,19 +109,19 @@ public class TvPanelUI extends javax.swing.JPanel {
     }
 
     public QueueUI getQueueUI1() {
-        return this.queueUI1;
+        return this.Cola1;
     }
 
     public QueueUI getQueueUI2() {
-        return this.queueUI1;
+        return this.Cola2;
     }
 
     public QueueUI getQueueUI3() {
-        return this.queueUI3;
+        return this.Cola3;
     }
 
     public QueueUI getQueueUI4() {
-        return this.queueUI4;
+        return this.ColaRefuerzo;
     }
 
     /**

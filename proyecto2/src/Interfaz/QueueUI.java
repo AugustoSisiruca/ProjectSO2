@@ -90,10 +90,10 @@ public class QueueUI extends javax.swing.JPanel {
         backgroundQueue.setBackground(new java.awt.Color(0, 0, 51));
         backgroundQueue.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titleQueueUI.setFont(new java.awt.Font("Castellar", 1, 16)); // NOI18N
+        titleQueueUI.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         titleQueueUI.setForeground(new java.awt.Color(255, 255, 255));
         titleQueueUI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titleQueueUI.setText("COLA PRIORIDAD:");
+        titleQueueUI.setText("COLA PRIORIDAD GENERICA");
         backgroundQueue.add(titleQueueUI, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
 
         jScrollPaneQueue.setBackground(new java.awt.Color(255, 255, 255));

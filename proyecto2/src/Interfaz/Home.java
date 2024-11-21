@@ -35,10 +35,10 @@ public class Home extends javax.swing.JFrame {
         ImageIcon cartoonNetworkLogo = imageUtils.loadScaledImage("/GUI/Assets/StarWars/logo.png", 140, 80);
         ImageIcon nickelodeonLogo = imageUtils.loadScaledImage("/GUI/Assets/StarTrek/logo.png", 120, 80);
         
-        tvPanelUI1.getLogo().setIcon(cartoonNetworkLogo);
-        tvPanelUI2.getLogo().setIcon(nickelodeonLogo);
-        tvPanelUI1.getLogo().setText("");
-        tvPanelUI2.getLogo().setText("");
+        starWarsPeleador.getLogo().setIcon(cartoonNetworkLogo);
+        starTrekPeleador.getLogo().setIcon(nickelodeonLogo);
+        starWarsPeleador.getLogo().setText("");
+        starTrekPeleador.getLogo().setText("");
         iaStatusLabel.setText("");
         WinnerLabelID.setText("");
         
@@ -67,16 +67,21 @@ public class Home extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         FightingTitle = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        roundLabel = new javax.swing.JLabel();
-        iaStatusLabel = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         battleDuration = new javax.swing.JSlider();
         clockVelocity = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         WinnerLabelID = new javax.swing.JLabel();
         Winner1 = new javax.swing.JLabel();
-        fighterUI1 = new Interfaz.FighterUI();
-        fighterUI2 = new Interfaz.FighterUI();
-        tvPanelUI1 = new Interfaz.TvPanelUI();
-        tvPanelUI2 = new Interfaz.TvPanelUI();
+        FigtherUI1 = new Interfaz.FighterUI();
+        FigtherUI2 = new Interfaz.FighterUI();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        iaStatusLabel = new javax.swing.JLabel();
+        roundLabel = new javax.swing.JLabel();
+        starTrekPeleador = new Interfaz.TvPanelUI();
+        starWarsPeleador = new Interfaz.TvPanelUI();
+        fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -87,28 +92,19 @@ public class Home extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1130, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        FightingTitle.setFont(new java.awt.Font("Castellar", 1, 36)); // NOI18N
+        FightingTitle.setFont(new java.awt.Font("Broadway", 1, 48)); // NOI18N
         FightingTitle.setForeground(new java.awt.Color(255, 255, 255));
         FightingTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FightingTitle.setText("STAR WARS VS STAR TREK");
-        jPanel1.add(FightingTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(221, 10, 700, -1));
+        jPanel1.add(FightingTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 770, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 51));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
-        roundLabel.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
-        roundLabel.setForeground(new java.awt.Color(255, 255, 255));
-        roundLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        roundLabel.setText("Round: 0");
+        jPanel3.setBackground(new java.awt.Color(0, 255, 255));
 
-        iaStatusLabel.setFont(new java.awt.Font("Castellar", 1, 17)); // NOI18N
-        iaStatusLabel.setForeground(new java.awt.Color(255, 255, 255));
-        iaStatusLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        iaStatusLabel.setText("IA STATUS LABEL");
-        iaStatusLabel.setToolTipText("");
-
-        battleDuration.setBackground(new java.awt.Color(0, 0, 51));
-        battleDuration.setForeground(new java.awt.Color(255, 255, 255));
+        battleDuration.setBackground(new java.awt.Color(0, 255, 255));
+        battleDuration.setFont(new java.awt.Font("Showcard Gothic", 0, 12)); // NOI18N
         battleDuration.setMajorTickSpacing(9);
         battleDuration.setMaximum(20);
         battleDuration.setMinimum(1);
@@ -129,89 +125,163 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        clockVelocity.setFont(new java.awt.Font("Century", 1, 16)); // NOI18N
-        clockVelocity.setForeground(new java.awt.Color(255, 255, 255));
+        clockVelocity.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
+        clockVelocity.setForeground(new java.awt.Color(0, 0, 51));
         clockVelocity.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        clockVelocity.setText("AJUSTE LA VELOCIDAD ");
+        clockVelocity.setText("VELOCIDAD DE PELEA EN SEGUNDOS");
 
-        WinnerLabelID.setFont(new java.awt.Font("Century", 0, 14)); // NOI18N
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(battleDuration, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clockVelocity, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(clockVelocity, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(battleDuration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        jPanel4.setBackground(new java.awt.Color(0, 102, 0));
+        jPanel4.setForeground(new java.awt.Color(0, 102, 102));
+
+        WinnerLabelID.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 14)); // NOI18N
         WinnerLabelID.setForeground(new java.awt.Color(255, 255, 255));
         WinnerLabelID.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         WinnerLabelID.setText("Ganador");
 
-        Winner1.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        Winner1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
         Winner1.setForeground(new java.awt.Color(255, 255, 255));
         Winner1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Winner1.setText("Ganador:");
+        Winner1.setText("VICTORIA:");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(Winner1)
+                .addGap(18, 18, 18)
+                .addComponent(WinnerLabelID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Winner1)
+                    .addComponent(WinnerLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(7, Short.MAX_VALUE))
+        );
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Assets/vsImagenPelea.jpg"))); // NOI18N
+
+        jPanel5.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel5.setForeground(new java.awt.Color(0, 51, 51));
+
+        iaStatusLabel.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 14)); // NOI18N
+        iaStatusLabel.setForeground(new java.awt.Color(255, 255, 255));
+        iaStatusLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iaStatusLabel.setText("IA STATUS LABEL");
+        iaStatusLabel.setToolTipText("");
+
+        roundLabel.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        roundLabel.setForeground(new java.awt.Color(255, 255, 255));
+        roundLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        roundLabel.setText("RONDA: 0");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(roundLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(106, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(iaStatusLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(iaStatusLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(roundLabel)
+                .addGap(19, 19, 19))
+        );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addComponent(roundLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(iaStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(clockVelocity, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Winner1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(WinnerLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(24, 24, 24)
-                            .addComponent(fighterUI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(fighterUI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(battleDuration, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(10, 10, 10)
+                .addComponent(FigtherUI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FigtherUI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(clockVelocity)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(battleDuration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FigtherUI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FigtherUI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(iaStatusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(roundLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(fighterUI1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fighterUI2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addComponent(Winner1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addComponent(WinnerLabelID, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 400, 730));
-        jPanel1.add(tvPanelUI1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 60, 370, 740));
-        jPanel1.add(tvPanelUI2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 370, 740));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 520, 740));
+        jPanel1.add(starTrekPeleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 80, -1, -1));
+        jPanel1.add(starWarsPeleador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondoPeleaBueno.png"))); // NOI18N
+        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1420, 840));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1462, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 917, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -224,7 +294,7 @@ public class Home extends javax.swing.JFrame {
     private void battleDurationStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_battleDurationStateChanged
         // TODO add your handling code here:
         int newSpeed = getBattleDuration().getValue();
-//        app.getIaArena().setCombatSpeed(newSpeed);
+        //        app.getIaArena().setCombatSpeed(newSpeed);
     }//GEN-LAST:event_battleDurationStateChanged
 
     /**
@@ -265,46 +335,51 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FightingTitle;
+    private Interfaz.FighterUI FigtherUI1;
+    private Interfaz.FighterUI FigtherUI2;
     private javax.swing.JLabel Winner1;
     private javax.swing.JLabel WinnerLabelID;
     private javax.swing.JSlider battleDuration;
     private javax.swing.JLabel clockVelocity;
-    private Interfaz.FighterUI fighterUI1;
-    private Interfaz.FighterUI fighterUI2;
+    private javax.swing.JLabel fondo;
     private javax.swing.JLabel iaStatusLabel;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel roundLabel;
-    private Interfaz.TvPanelUI tvPanelUI1;
-    private Interfaz.TvPanelUI tvPanelUI2;
+    private Interfaz.TvPanelUI starTrekPeleador;
+    private Interfaz.TvPanelUI starWarsPeleador;
     // End of variables declaration//GEN-END:variables
 
     /**
      * @return the tvPanelUI1
      */
     public Interfaz.TvPanelUI getTvPanelUI1() {
-        return tvPanelUI1;
+        return starWarsPeleador;
     }
 
     /**
      * @return the tvPanelUI2
      */
     public Interfaz.TvPanelUI getTvPanelUI2() {
-        return tvPanelUI2;
+        return starTrekPeleador;
     }
 
     /**
      * @return the avatarFighter
      */
     public Interfaz.FighterUI getAvatarFighter() {
-        return fighterUI1;
+        return FigtherUI2;
     }
 
     /**
      * @return the regularShowFighter
      */
     public Interfaz.FighterUI getRegularShowFighter() {
-        return fighterUI2;
+        return FigtherUI1;
     }
 
     /**
