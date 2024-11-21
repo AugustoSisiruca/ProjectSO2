@@ -4,6 +4,8 @@
  */
 package Interfaz;
 
+import proyecto2.App;
+
 /**
  *
  * @author sisir
@@ -100,9 +102,9 @@ public class MenuInicio extends javax.swing.JFrame {
 
     private void iniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarActionPerformed
         // TODO add your handling code here:
-        Home v1 = new Home();
-        v1.setVisible(true);
         this.dispose();
+        App app = new App();
+        app.start();
     }//GEN-LAST:event_iniciarActionPerformed
 
     /**

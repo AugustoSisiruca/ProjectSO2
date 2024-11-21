@@ -9,6 +9,8 @@ package proyecto2;
  * @author sisir
  */
 
+import Interfaz.MenuInicio;
+
 public class Main {
 
     /**
@@ -16,8 +18,8 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        App app = new App();
-        app.start();
+        MenuInicio menu = new MenuInicio();
+        menu.setVisible(true);
     }
     
 }
